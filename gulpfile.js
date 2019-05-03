@@ -33,7 +33,7 @@ function js() {
 //Browser Sync
 function browser() {
     browserSync.init({
-        proxy: 'http://localhost:8888/WP_sites/Leviticus/',
+        proxy: 'path/to/server',
         files: [
             './**/*.php'
         ]
