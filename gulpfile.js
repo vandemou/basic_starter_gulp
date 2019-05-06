@@ -1,6 +1,6 @@
 const { src, dest, watch } = require('gulp');
 const sass = require('gulp-sass');
-// const minifyCSS = require('gulp-csso');
+const minifyCSS = require('gulp-csso');
 const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
@@ -12,7 +12,7 @@ function css() {
     return src('./sass/*.scss', { sourcemaps: true })
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
-        // .pipe(minifyCSS())
+        .pipe(minifyCSS())
         .pipe(autoprefixer())
         .pipe(sourcemaps.write('sass/maps'))
         // .pipe(sourcemaps.write())
